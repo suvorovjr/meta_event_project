@@ -18,7 +18,7 @@ class FacebookPages(models.Model):
 class InstagramPages(models.Model):
     social_platform_id = models.CharField(_('social platform ID'), max_length=255, unique=True)
     page_token = models.CharField(_('page token'), max_length=255, unique=True)
-    facebook_page_id = models.ForeignKey(_('facebook page'), FacebookPages, on_delete=models.CASCADE)
+    facebook_page_id = models.ForeignKey('FacebookPages', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.facebook_page_id
